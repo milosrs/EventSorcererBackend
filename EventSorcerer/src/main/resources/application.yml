@@ -1,0 +1,17 @@
+server: 
+  port: 8085
+
+spring:
+  jersey:
+   type: filter
+
+  data:
+   mongodb:
+    uri: mongodb+srv://riki:Neverwinter.2@eventsorcerer.rb95b.mongodb.net/EventSorcerer.Test?retryWrites=true&w=majority
+   
+  security: 
+    oauth2: 
+      resourceserver: 
+        jwt: 
+          issuer-uri: "http://localhost:8083/auth/realms/"
+          jwk-set-uri: "http://localhost:8083/auth/realms/rixon/protocol/openid-connect/certs"
