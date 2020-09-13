@@ -82,6 +82,11 @@
 		    <type>pom</type>
 		    <scope>import</scope>
 		</dependency>
+		<dependency>
+		    <groupId>org.keycloak</groupId>
+		    <artifactId>keycloak-spring-boot-starter</artifactId>
+		    <version>11.0.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -93,4 +98,15 @@
 		</plugins>
 	</build>
 
+	<dependencyManagement>
+	    <dependencies>
+	        <dependency>
+	            <groupId>org.keycloak.bom</groupId>
+	            <artifactId>keycloak-adapter-bom</artifactId>
+	            <version>10.0.2</version>
+	            <type>pom</type>
+	            <scope>import</scope>
+	        </dependency>
+	    </dependencies>
+	</dependencyManagement>
 </project>
