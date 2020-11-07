@@ -11,15 +11,7 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class Table extends Persistable {
-	@Getter @Setter
-	private int seatsNumber;
-	@Getter @Setter
-	private int seatsTaken;
-	@Getter @Setter
-	private boolean reserved;
-	@Getter @Setter
-	private LocalDate reservedFrom;
-	@Getter @Setter
-	private LocalDate reservedTo;
+public class Persistable {
+	@Id @Getter @Setter
+	protected Long id;
 }

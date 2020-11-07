@@ -19,14 +19,15 @@ public class MongoConfiguration extends AbstractMongoClientConfiguration {
 	@Autowired
 	private ConfigProperties configProperties;
 	
-	private static final String URI_PROP_KEY = "spring.data.mongodb.uri";
+	private static final String URI_PROPERTY_KEY = "spring.data.mongodb.uri";
 	private static final String DB_NAME = "EventSorcerer";
 	
 	public MongoClient mongoClient() {
 		CodecRegistry pojoCodecRegistry = fromProviders(PojoCodecProvider.builder().automatic(true).build());
         CodecRegistry codecRegistry = fromRegistries(MongoClientSettings.getDefaultCodecRegistry(), pojoCodecRegistry);
+        
         return MongoClients.create(MongoClientSettings.builder()
-                                                      .applyConnectionString(new ConnectionString(configProperties.getConfigValue(URI_PROP_KEY)))
+                                                      .applyConnectionString(new ConnectionString(configProperties.getConfigValue(URI_PROPERTY_KEY)))
                                                       .codecRegistry(codecRegistry)
                                                       .build());
 	}

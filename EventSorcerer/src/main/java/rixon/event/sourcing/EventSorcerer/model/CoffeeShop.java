@@ -10,10 +10,7 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class CoffeeShop {
-	@Id
-	@Getter @Setter
-	private Long Id;
+public class CoffeeShop extends Persistable {
 	@Getter @Setter
 	private String name;
 	@Getter @Setter

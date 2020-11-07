@@ -11,9 +11,7 @@ import rixon.event.sourcing.EventSorcerer.model.enums.ProductType;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
-	@Id @Getter @Setter
-	private Long id;
+public class Product extends Persistable {
 	@Getter @Setter
 	private LocalDate createdOn;
 	@Getter @Setter
@@ -22,8 +20,6 @@ public class Product {
 	private String description;
 	@Getter @Setter
 	private Double price;
-	@Getter @Setter
-	private boolean isAvailable;
 	@Getter @Setter
 	private ProductType type;
 }

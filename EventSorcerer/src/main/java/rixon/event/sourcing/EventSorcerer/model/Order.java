@@ -12,9 +12,7 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class Order {
-	@Id
-	private Long id;
+public class Order extends Persistable {
 	@Getter @Setter
 	private LocalDate receivedOn;
 	@Getter @Setter
