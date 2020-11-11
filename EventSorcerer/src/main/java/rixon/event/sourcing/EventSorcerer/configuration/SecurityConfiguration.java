@@ -31,7 +31,6 @@ import rixon.event.sourcing.EventSorcerer.model.enums.UserType;
  * This is essentially WebSecurityConfigurerAdapter, but is configured to use Keycloak Authentication Server.
  * Server should be up and running on your local machine on port 8083.
  * @author milos
- *
  */
 @KeycloakConfiguration
 public class SecurityConfiguration extends KeycloakWebSecurityConfigurerAdapter {
@@ -96,7 +95,6 @@ public class SecurityConfiguration extends KeycloakWebSecurityConfigurerAdapter 
 			.csrf().disable()
 			.cors()
 			.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-			.and().anonymous()
 			.and().authorizeRequests().antMatchers("/**").permitAll()			//Uncomment for requests to be allowed!
 			//.and().authorizeRequests().antMatchers("/api/admin/**").hasRole(UserType.ADMIN.name())
 			//.and().authorizeRequests().antMatchers("/api/manager/**").hasAnyRole(UserType.MANAGER.name(), UserType.ADMIN.name())
