@@ -13,11 +13,18 @@ spring:
     oauth2: 
       resourceserver: 
         jwt: 
-          issuer-uri: "http://localhost:8083/auth/realms/"
-          jwk-set-uri: "http://localhost:8083/auth/realms/rixon/protocol/openid-connect/certs"
+          issuer-uri: http://localhost:8083/auth/realms/sorcerer_realm/protocol/openid-connect/token
+          jwk-set-uri: http://localhost:8083/auth/realms/sorcerer_realm/protocol/openid-connect/certs
 
 keycloak:
-  auth-server-url: http://localhost:8085/auth
   realm: sorcerer_realm
+  bearer-only: true
+  auth-server-url: http://localhost:8083/auth/
+  ssl-required: external
   resource: event_sorcerer
-  public-client: true
+  verify-token-audience: true
+  credentials:
+    secret-jwt:
+      secret: d84611c9-af79-423b-b12c-bfa7fec23e85
+  use-resource-role-mappings: true
+  confidential-port: 0
