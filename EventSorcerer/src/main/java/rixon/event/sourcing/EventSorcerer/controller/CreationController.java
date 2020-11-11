@@ -31,7 +31,9 @@ public class CreationController {
 	@PostMapping("/product")
 	public boolean createProduct(@RequestBody CreateProductCommand command) {
 		Set<String> roles = utility.getUserRoles();
+		String jwt = utility.getJWTToken();
 		roles.forEach(r -> System.out.println(r));
+		System.out.println(jwt);
 		return true;
 	}
 }
